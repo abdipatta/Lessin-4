@@ -1,10 +1,11 @@
 import { Expenses } from "./components/expenses/Expenses";
+import NewExpense from "./components/new-expense/NewExpense";
 
-const expenses = [
+const expensesData = [
   {
     id: 1,
     title: "Шаурма",
-    price: 94.12,
+    price: 94,
     date: new Date(),
   },
   {
@@ -30,9 +31,8 @@ const expenses = [
 function App() {
   return (
     <div>
-      {/*form*/}
-      {/*expense*/}
-      <Expenses data={expensesData }/>
+      <NewExpense />
+      <Expenses data={expensesData} />
     </div>
   );
 }

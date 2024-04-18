@@ -1,15 +1,18 @@
 import PropTypes from "prop-types";
+import css from "./ExpenseItem.module.css";
 
-export const ExpenseItem=({date,title,price})=>{
-<div>
-<div> {date.toISOString()}</div>
-<div> {title}</div>
-<div> {price}</div>
-</div>
-}
+export const ExpenseItem = ({ date, title, price }) => {
+  return (
+    <div className={css.ExpenseItemContainer}>
+      <div className={css.ExpenseItemDate}> {date.toString()}</div>
+      <div className={css.ExpenseItemTitle}> {title}</div>
+      <div className={css.ExpenseItemPrice}> {price}</div>
+    </div>
+  );
+};
 
-ExpenseItem.propType={
-    date: PropTypes.instanceOf(Date),
-    title:PropTypes.string,
-    price:PropTypes.number,
-}
+ExpenseItem.propTypes = {
+  date: PropTypes.instanceOf(Date),
+  title: PropTypes.string,
+  price: PropTypes.number,
+};
